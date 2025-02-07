@@ -1,0 +1,28 @@
+<services>
+    <service name="obs_scm">
+        <param name="filename">base64</param>
+        <param name="url">https://github.com/huakim/lua-base64.git</param>
+        <param name="scm">git</param>
+        <param name="revision">scm-0</param>
+        <param name="without-version">enable</param>
+        <!--param name="versionformat">@PARENT_TAG@</param-->
+        <!--param name="versionrewrite-pattern">v(.*)</param-->
+    </service>
+    <service name="lua2pack_generate" mode="buildtime">
+        <param name="rockspec">glob://./base64/base64-scm-0.rockspec</param>
+        <param name="template">generic.spec</param>
+    </service>
+    <service name="lua2pack_generate" mode="buildtime"> 
+        <param name="rockspec">glob://./base64/base64-scm-0.rockspec</param>
+        <param name="template">obs.obsinfo</param>
+    </service>
+    <service name="lua2pack_generate" mode="buildtime"> 
+        <param name="rockspec">glob://./base64/base64-scm-0.rockspec</param>
+        <param name="template">rock.rockspec</param>
+    </service>
+    <service name="tar" mode="buildtime"/>
+    <service name="recompress" mode="buildtime">
+        <param name="file">*.tar</param>
+        <param name="compression">gz</param>
+    </service>
+</services>
