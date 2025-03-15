@@ -11,6 +11,7 @@
     <service name="lua2pack_generate" mode="buildtime">
         <param name="rockspec">glob://./base64/base64-scm-0.rockspec</param>
         <param name="template">generic.spec</param>
+        <param name="luacode">noarch=true</param>
     </service>
     <service name="lua2pack_generate" mode="buildtime"> 
         <param name="rockspec">glob://./base64/base64-scm-0.rockspec</param>
@@ -19,7 +20,6 @@
     <service name="lua2pack_generate" mode="buildtime"> 
         <param name="rockspec">glob://./base64/base64-scm-0.rockspec</param>
         <param name="template">rock.rockspec</param>
-        <param name="luacode">noarch=true;</param>
     </service>
     <service name="tar" mode="buildtime"/>
     <service name="recompress" mode="buildtime">
